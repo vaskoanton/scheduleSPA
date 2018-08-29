@@ -1,0 +1,73 @@
+<div class="admin-page">
+  <div class="container">
+    <div class="main">
+      <div class="left">
+          <div class="top">
+            <div class="user">
+                <div class="label">{{userLabel}}</div>
+                <div>{{userName}}</div>
+            </div>
+          </div>
+          <div class="menu">
+              <ul>
+                  <li [ngClass]="getClass(routes.teachers)">
+                      <a [routerLink]="routes.teachers" (click)="setActiveRoute(routes.teachers)">
+                        <div class="icon">
+                           <i class="fa fa-home" aria-hidden="true"></i>
+                         </div>
+                        <div class="text">Teachers</div>
+                        </a>
+                  </li>
+                  <li [ngClass]="getClass(routes.subjects)">
+                        <a [routerLink]="routes.subjects" (click)="setActiveRoute(routes.subjects)">
+                        <div class="icon">
+                           <i class="fa fa-home" aria-hidden="true"></i>
+                         </div>
+                        <div class="text">Subjects</div>
+                     </a>
+                  </li>
+                  <li>
+                        <a [routerLink]="['teachersedit']" >
+                        <div class="icon">
+                           <i class="fa fa-area-chart" aria-hidden="true"></i>
+                         </div>
+                        <div class="text">Rooms</div>
+                        </a>
+                  </li>
+                  <li>
+                        <a [routerLink]="['teachers']" >
+                        <div class="icon">
+                           <i class="fa fa-newspaper-o" aria-hidden="true"></i>
+                         </div>
+                        <div class="text">Schedules</div>
+                        </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+      <div class="right">
+        <div class="top">
+            <div class="logout">
+                <a routerLink="routes.login">Logout</a>
+            </div>
+        </div>
+        <div class="content">
+            <router-outlet></router-outlet>
+            <router-outlet name="edit"></router-outlet>
+        </div>
+        
+         <!-- <div class="header">
+          <div class="left">
+              Admin page
+          </div>
+          <div class="right">
+              <div class="user">
+                  <div class="icon"><i class="fa fa-user-circle" aria-hidden="true"></i></div>
+                  <div class="info">John Travolta</div>
+              </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>

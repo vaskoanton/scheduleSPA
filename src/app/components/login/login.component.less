@@ -1,0 +1,74 @@
+.login-component{
+    height: 100%;
+    background: #84BF65;
+    .login-in{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        .login-form{
+            background: white;
+            padding: 30px;
+            min-width: 350px;
+            -webkit-box-shadow: 1px 1px 40px -12px rgba(0,0,0,0.75);
+            -moz-box-shadow: 1px 1px 40px -12px rgba(0,0,0,0.75);
+            box-shadow: 1px 1px 40px -12px rgba(0,0,0,0.75);
+            .form-item{
+                .form-item-title{
+                    text-transform: uppercase;
+                    margin-bottom: 5px;
+                }
+                .form-item-control{
+                    width: 100%;
+                    input{
+                        background: #F2F2F2;
+                        padding: 13px 10px 13px 10px;
+                        width: 100%;
+                        box-sizing: border-box;
+                        box-shadow: transparent;
+                        border: none;
+                        &.ng-touched{
+                            &.ng-invalid{
+                                border-bottom:2px solid #4CB050;
+                            }
+                        }
+                        &:focus{
+                            outline: none;
+                            background: #e0e0e0;
+                        }
+                    }
+                    input[type="submit"]{
+                        background: #4CB050;
+                        text-transform: uppercase;
+                        color: white;
+                        cursor: pointer;
+                        &:disabled{
+                            background: #81ca83;  
+                            &:hover{
+                                background: #81ca83;  
+                            }
+                        }
+                        &:hover{
+                            background: #3d9841; 
+                        }
+                    }
+            
+                }
+                .form-item-error{
+                    color: red;
+                    font-size: 12px;
+
+                    margin-top: 5px;
+                }
+                &+.form-item{
+                    margin-top: 20px;
+                }
+            }
+            .server-message{
+                margin-top: 15px;
+                color: red;
+            }
+        }
+    }
+}

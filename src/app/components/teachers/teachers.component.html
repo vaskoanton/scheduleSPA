@@ -1,0 +1,28 @@
+<div class="teachers">
+  <div class="controls">
+    <a href="#">Create teacher</a>
+  </div>
+  <div class="teacher-list">
+    <div class="teacher-list-in">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Surname</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let teacher of teachers; let i = index">
+              <td>{{i + 1}}</td>
+              <td>{{teacher.name}}</td>
+              <td>{{teacher.surname}}</td>
+              <td><a [routerLink]="['edit', teacher.id]">Edit</a></td>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+</div>
