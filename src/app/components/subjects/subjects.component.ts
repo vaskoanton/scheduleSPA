@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SubjectService } from '../../services/subject.service';
+import { Subject } from '../../models/subject';
 
 @Component({
   selector: 'app-subjects',
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./subjects.component.less']
 })
 export class SubjectsComponent implements OnInit {
+  subjects: Subject[]; 
 
-  constructor() { }
+  constructor(private subjectService: SubjectService) {
+    this.subjectService.getSubjects().subscribe(subjects => {
+      this.subjects = subjects;
+    });
+   }
 
   ngOnInit() {
-  }
 
+  }
 }
